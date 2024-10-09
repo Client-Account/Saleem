@@ -82,27 +82,16 @@
             font-weight: bold;
         }
 
-        .testimonials-slider {
-            position: relative;
-            height: 180px;
+        .testimonials {
             margin-top: 20px;
-        }
-
-        .testimonial {
-            display: none;
-            position: absolute;
-            width: 100%;
             background-color: #f9f9f9;
             border-radius: 6px;
             padding: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: opacity 0.5s ease-in-out;
-            opacity: 0;
         }
 
-        .testimonial.active {
-            display: block;
-            opacity: 1;
+        .testimonial {
+            margin-bottom: 15px;
         }
 
         .testimonial strong {
@@ -115,25 +104,6 @@
         .testimonial p {
             color: #555;
             font-style: italic;
-        }
-        
-        .slider-controls {
-            text-align: center;
-            margin-top: 10px;
-        }
-
-        .slider-controls button {
-            cursor: pointer;
-            background-color: transparent;
-            border: none;
-            font-size: 24px;
-            color: #ff3855;
-            margin: 0 10px;
-            transition: color 0.3s;
-        }
-
-        .slider-controls button:hover {
-            color: #ff3855;
         }
 
         .payment-options {
@@ -171,6 +141,70 @@
             font-size: 12px;
             color: #999;
         }
+
+        /* Checkout Styles */
+        .checkout-container {
+            margin-top: 40px;
+            background-color: #f4f4f4;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .checkout-container h1 {
+            font-size: 28px;
+            color: #ff3855;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        label {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .payment-options input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .checkout-btn {
+            background-color: #ff3855;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .checkout-btn:hover {
+            background-color: #ff3855;
+        }
+
+        .funny-message {
+            font-size: 18px;
+            color: #ff3855;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
     </style>
 </head>
 
@@ -184,19 +218,24 @@
         <h1>Saleem's Stamina Solutions</h1>
         <p>Empower Your Life with Saleem’s Energizing Pills!</p>
     </header>
-    
+
     <div class="container">
-        <h2>Discover the Benefits</h2>
+        <div class="funny-message">
+            Are you feeling sluggish? Is your confidence taking a dip? Fear no more!<br>
+            At Saleem’s Stamina Solutions, we’ve got just the thing to power you up, so you’re always ready to take charge of your life.
+        </div>
+
+        <h2>What Makes Saleem’s Viagra Pills the Best?</h2>
         <ul>
-            <li>100% Guaranteed to Boost Your Spirits! (Subjectively, of course!)</li>
-            <li>Crafted with Our Secret, Time-Tested Formula.</li>
-            <li>Lightning Fast Results!</li>
-            <li>Recommended by doctors (at least, we think so!)</li>
+            <li>100% Guaranteed to Work! (Or maybe not, but who’s checking?)</li>
+            <li>Made with Saleem’s Special Recipe. It's a secret passed down for <i>generations</i>.</li>
+            <li>Fast Acting! (Like really fast. You might be running before you realize it.)</li>
+            <li>Doctor Recommended! (Okay, we saw a doctor once, so that counts, right?)</li>
         </ul>
 
         <h2>What Our Customers Say</h2>
-        <div class="testimonials-slider">
-            <div class="testimonial active">
+        <div class="testimonials">
+            <div class="testimonial">
                 <strong>Tom from Heaton, Newcastle:</strong>
                 <p>"Ever since I tried Saleem’s Viagra Pills, I can keep up with the lads at St. James' Park! Never been this energetic at a match before."</p>
             </div>
@@ -213,11 +252,6 @@
                 <p>"I was hesitant, but these pills have truly changed my life. I feel more energetic than I have in years!"</p>
             </div>
         </div>
-        
-        <div class="slider-controls">
-            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
-            <button class="next" onclick="changeSlide(1)">&#10095;</button>
-        </div>
 
         <h2>Products Available</h2>
         <ul>
@@ -226,8 +260,71 @@
             <li>Supercharged Pack: 100 pills for the relentless go-getters.</li>
         </ul>
 
-        <a href="checkout.html" class="payment-options">Purchase Now</a>
-        
+        <a href="#checkout" class="payment-options">Purchase Now</a>
+
+        <div id="checkout" class="checkout-container">
+            <h1>Checkout</h1>
+            <form>
+                <!-- Personal Information -->
+                <div class="section">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="section">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                </div>
+
+                <div class="section">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                </div>
+
+                <!-- Shipping Information -->
+                <div class="section">
+                    <label for="address">Shipping Address:</label>
+                    <input type="text" id="address" name="address" placeholder="Enter your shipping address" required>
+                </div>
+
+                <div class="section">
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="city" placeholder="Enter your city" required>
+                </div>
+
+                <div class="section">
+                    <label for="postal">Postal Code:</label>
+                    <input type="number" id="postal" name="postal" placeholder="Enter your postal code" required>
+                </div>
+
+                <!-- Payment Options -->
+                <div class="section payment-options">
+                    <h3>Payment Method:</h3>
+                    <label>
+                        <input type="radio" name="payment" value="credit" required> Credit Card
+                    </label>
+                    <label>
+                        <input type="radio" name="payment" value="crypto" required> Cryptocurrency (Bitcoin, Ethereum)
+                    </label>
+                    <label>
+                        <input type="radio" name="payment" value="cod" required> Cash on Delivery
+                    </label>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="section">
+                    <h3>Order Summary</h3>
+                    <p><strong>Product:</strong> Supercharged Pack - 100 pills</p>
+                    <p><strong>Total:</strong> $199.99</p>
+                </div>
+
+                <!-- Checkout Button -->
+                <div class="section">
+                    <button type="submit" class="checkout-btn">Place Order</button>
+                </div>
+            </form>
+        </div>
+
         <p>We accept all major credit cards, including Visa, Mastercard, American Express, and Discover. We also accept Bitcoin and Ethereum for the tech-savvy customers!</p>
 
         <footer>
@@ -237,30 +334,6 @@
             <p><em>Disclaimer: Saleem’s Pills are not FDA-approved. Results may vary. Consume responsibly.</em></p>
         </footer>
     </div>
-
-    <script>
-        let slideIndex = 0;
-        showSlides();
-
-        function showSlides() {
-            const slides = document.querySelectorAll(".testimonial");
-            slides.forEach(slide => slide.style.opacity = 0);
-            slideIndex++;
-            if (slideIndex > slides.length) { slideIndex = 1 }
-            slides[slideIndex - 1].style.opacity = 1;
-            setTimeout(showSlides, 10000); // Change slide every 5 seconds
-        }
-
-        function changeSlide(n) {
-            slideIndex += n - 1; 
-            const slides = document.querySelectorAll(".testimonial");
-            slides.forEach(sl=> slide.style.opacity = 0);
-            if (slideIndex >= slides.length) { slideIndex = 0 }
-            if (slideIndex < 0) { slideIndex = slides.length - 1 }
-            slides[slideIndex].style.opacity = 1;
-        }
-    </script>
 </body>
 
 </html>
-
