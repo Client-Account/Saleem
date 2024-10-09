@@ -8,77 +8,156 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f0f0;
+            background-color: #e9ecef;
             margin: 0;
-            padding: 20px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .banner {
+            width: 100%;
+            height: 250px;
+            background-color: #e0e0e0; /* Light grey as a placeholder */
+            background-position: center;
+            background-size: cover;
+            background-image: url('banner.jpg'); /* Replace 'banner.jpg' with your actual image path */
+            border-bottom: 4px solid #ff3855;
         }
 
         header {
             text-align: center;
-            background-color: #4CAF50;
+            padding: 30px 20px;
+            background: linear-gradient(to right, #ff3855, #8BC34A);
             color: white;
-            padding: 40px 20px;
-            border-radius: 10px;
         }
 
         header img {
             border-radius: 50%;
+            border: 5px solid #fff;
+            margin-bottom: 20px;
         }
 
         .container {
-            max-width: 800px;
-            margin: 20px auto;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
             background-color: #ffffff;
-            padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
         }
 
         h1 {
-            font-size: 40px;
+            font-size: 48px;
             margin-bottom: 10px;
+            font-weight: bold;
         }
 
         h2 {
-            color: #4CAF50;
-            margin-top: 30px;
-            font-size: 26px;
+            color: #ff3855;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            font-size: 30px;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
         }
 
         ul {
             margin-left: 20px;
+            padding-left: 0;
         }
 
-        .testimonials {
-            margin: 30px 0;
+        ul li {
+            margin-bottom: 10px;
+            list-style: none;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        ul li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #ff3855;
+            font-weight: bold;
+        }
+
+        .testimonials-slider {
+            position: relative;
+            height: 180px;
+            margin-top: 20px;
         }
 
         .testimonial {
-            border-bottom: 1px solid #ddd;
-            padding: 15px 0;
-            margin-bottom: 15px;
-            font-style: italic;
+            display: none;
+            position: absolute;
+            width: 100%;
+            background-color: #f9f9f9;
+            border-radius: 6px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: opacity 0.5s ease-in-out;
+            opacity: 0;
+        }
+
+        .testimonial.active {
+            display: block;
+            opacity: 1;
         }
 
         .testimonial strong {
-            display: block;
-            font-size: 16px;
+            font-size: 18px;
             color: #333;
-            margin-bottom: 5px;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .testimonial p {
+            color: #555;
+            font-style: italic;
+        }
+        
+        .slider-controls {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .slider-controls button {
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+            font-size: 24px;
+            color: #ff3855;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .slider-controls button:hover {
+            color: #ff3855;
         }
 
         .payment-options {
-            margin-top: 30px;
+            margin-top: 40px;
             padding: 20px;
-            background-color: #f9f9f9;
+            background-color: #ff3855;
             border-radius: 8px;
             text-align: center;
-            font-size: 18px;
-            color: #4CAF50;
+            font-size: 20px;
+            color: white;
+            text-transform: uppercase;
+            display: block;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .payment-options:hover {
+            background-color: #45A049;
         }
 
         footer {
             text-align: center;
+            padding: 20px 0;
+            background: #f5f5f5;
             margin-top: 40px;
             font-size: 14px;
             color: #777;
@@ -96,56 +175,92 @@
 </head>
 
 <body>
+    <div class="banner">
+        <img src="b.png" alt="banner" style="width:100%;height:300px;">
+    </div>
+    
     <header>
         <img src="a.jpeg" alt="Logo" style="width:150px;height:150px;">
         <h1>Saleem's Stamina Solutions</h1>
-        <p>Boost Your Power with Saleem’s Viagra Pills!</p>
+        <p>Empower Your Life with Saleem’s Energizing Pills!</p>
     </header>
+    
     <div class="container">
-        <h2>What Makes Saleem’s Viagra Pills the Best?</h2>
+        <h2>Discover the Benefits</h2>
         <ul>
-            <li>100% Guaranteed to Work! (Or maybe not, but who’s checking?)</li>
-            <li>Made with Saleem’s Special Recipe. It's a secret passed down for <i>hours</i>.</li>
-            <li>Fast Acting! (Like really fast. You might be running before you realize it.)</li>
-            <li>Doctor Recommended! (Okay, we saw a doctor once, so that counts, right?)</li>
+            <li>100% Guaranteed to Boost Your Spirits! (Subjectively, of course!)</li>
+            <li>Crafted with Our Secret, Time-Tested Formula.</li>
+            <li>Lightning Fast Results!</li>
+            <li>Recommended by doctors (at least, we think so!)</li>
         </ul>
 
-        <h2>Testimonials</h2>
-        <div class="testimonials">
-            <div class="testimonial">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonials-slider">
+            <div class="testimonial active">
                 <strong>Tom from Heaton, Newcastle:</strong>
-                "Ever since I tried Saleem’s Viagra Pills, I can keep up with the lads at St. James' Park! Never been this energetic at a match before."
+                <p>"Ever since I tried Saleem’s Viagra Pills, I can keep up with the lads at St. James' Park! Never been this energetic at a match before."</p>
             </div>
             <div class="testimonial">
                 <strong>Gary from Byker, Newcastle:</strong>
-                "My wife says I’m like a new man! These pills have done wonders for me. I’ve got more pep in my step than I did in me 20s!"
+                <p>"My wife says I’m like a new man! These pills have done wonders for me. I’ve got more pep in my step than I did in my 20s!"</p>
             </div>
             <div class="testimonial">
                 <strong>Lee from Jesmond, Newcastle:</strong>
-                "I wasn’t sure at first, but I took Saleem’s Viagra Pills before heading to the Quayside with the missus, and now she won’t stop calling me ‘The Geordie Dynamo!’"
+                <p>"I wasn’t sure at first, but I took Saleem’s Viagra Pills before heading to the Quayside with the missus, and now she won’t stop calling me ‘The Geordie Dynamo!’"</p>
+            </div>
+            <div class="testimonial">
+                <strong>Jane from Gateshead:</strong>
+                <p>"I was hesitant, but these pills have truly changed my life. I feel more energetic than I have in years!"</p>
             </div>
         </div>
+        
+        <div class="slider-controls">
+            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        </div>
 
-        <h2>Buy Now!</h2>
+        <h2>Products Available</h2>
         <ul>
-            <li>Starter Pack: 5 pills for the skeptical first-timers.</li>
-            <li>Ultimate Power Pack: 50 pills for those who mean business.</li>
-            <li>Supercharged Pack: 100 pills for the <i>real</i> go-getters.</li>
+            <li>Starter Pack: 5 pills for the curious first-timers.</li>
+            <li>Ultimate Power Pack: 50 pills for those seeking a thrill.</li>
+            <li>Supercharged Pack: 100 pills for the relentless go-getters.</li>
         </ul>
 
-        <a href="checkout.html">
-            <div class="payment-options">Check Out</div>
-        </a>
-        <p>We accept all major credit cards, including Visa, Mastercard, American Express, and Discover. For tech-savvy
-            customers, we also accept cryptocurrency payments like Bitcoin and Ethereum!</p>
+        <a href="checkout.html" class="payment-options">Purchase Now</a>
+        
+        <p>We accept all major credit cards, including Visa, Mastercard, American Express, and Discover. We also accept Bitcoin and Ethereum for the tech-savvy customers!</p>
 
         <footer>
             <p><strong>Saleem's Stamina Solutions</strong> – Because life’s too short to be slow.</p>
             <p>Visit us at: 13-15 Glynfellis, Gateshead, NE10 8RH</p>
-            <p>Call us at: 1-800-SALEEMS-PILL | Email: saleem@staminapower.com</p>
-            <p><em>Disclaimer: Saleem’s Viagra Pills are not FDA-approved, or actually approved by anyone for that matter. Take at your own risk!</em></p>
+            <p>Call us: 1-800-SALEEMS-PILL | Email: saleem@staminapower.com</p>
+            <p><em>Disclaimer: Saleem’s Pills are not FDA-approved. Results may vary. Consume responsibly.</em></p>
         </footer>
     </div>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            const slides = document.querySelectorAll(".testimonial");
+            slides.forEach(slide => slide.style.opacity = 0);
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            slides[slideIndex - 1].style.opacity = 1;
+            setTimeout(showSlides, 5000); // Change slide every 5 seconds
+        }
+
+        function changeSlide(n) {
+            slideIndex += n - 1; 
+            const slides = document.querySelectorAll(".testimonial");
+            slides.forEach(sl=> slide.style.opacity = 0);
+            if (slideIndex >= slides.length) { slideIndex = 0 }
+            if (slideIndex < 0) { slideIndex = slides.length - 1 }
+            slides[slideIndex].style.opacity = 1;
+        }
+    </script>
 </body>
 
 </html>
+
