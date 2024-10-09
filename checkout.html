@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Saleem's Stamina Solutions</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #4CAF50;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        label {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .payment-options input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .checkout-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .checkout-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Checkout</h1>
+        <form>
+            <!-- Personal Information -->
+            <div class="section">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="section">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+            </div>
+
+            <div class="section">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+            </div>
+
+            <!-- Shipping Information -->
+            <div class="section">
+                <label for="address">Shipping Address:</label>
+                <input type="text" id="address" name="address" placeholder="Enter your shipping address" required>
+            </div>
+
+            <div class="section">
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" placeholder="Enter your city" required>
+            </div>
+
+            <div class="section">
+                <label for="postal">Postal Code:</label>
+                <input type="number" id="postal" name="postal" placeholder="Enter your postal code" required>
+            </div>
+
+            <!-- Payment Options -->
+            <div class="section payment-options">
+                <h3>Payment Method:</h3>
+                <label>
+                    <input type="radio" name="payment" value="credit" required> Credit Card
+                </label>
+                <label>
+                    <input type="radio" name="payment" value="crypto" required> Cryptocurrency (Bitcoin, Ethereum)
+                </label>
+                <label>
+                    <input type="radio" name="payment" value="cod" required> Cash on Delivery
+                </label>
+            </div>
+
+            <!-- Order Summary -->
+            <div class="section">
+                <h3>Order Summary</h3>
+                <p><strong>Product:</strong> Supercharged Pack - 100 pills</p>
+                <p><strong>Total:</strong> $199.99</p>
+            </div>
+
+            <!-- Checkout Button -->
+            <div class="section">
+                <button type="submit" class="checkout-btn">Place Order</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
